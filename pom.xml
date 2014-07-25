@@ -56,6 +56,12 @@
             <type>pom</type>
             <scope>test</scope>
         </dependency>
+        <dependency>
+        	<groupId>org.kie.modules</groupId>
+        	<artifactId>org-apache-commons-fileupload</artifactId>
+        	<version>6.1.0.CR2</version>
+        	<type>pom</type>
+        </dependency>
     </dependencies>
 
     <build>
