@@ -2,6 +2,8 @@ package com.example;
 
 
 //import java.net.URI;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 
 import javax.ws.rs.GET;
@@ -46,8 +48,21 @@ public class MyResource {
     	MultivaluedMap<String, String> queryParams = ui.getQueryParameters();
         MultivaluedMap<String, String> pathParams = ui.getPathParameters();
         
-        
-    	return "Hello, Heroku receieved file - "+fileName+" successfully";
+       Set queryKeySet = queryParams.keySet();
+       String queryString = "";
+       Iterator i = queryKeySet.iterator();
+       
+       while(i.hasNext()){
+    	   
+    	   List<String> tempList = queryParams.get(i.next());
+    	   
+    	   for(int j=0;j<tempList.size();j++){
+    		   queryString = queryString.concat(tempList.get(j));   
+    	   }
+    	   
+       }
+       
+    	return "Hello, Heroku receieved file - "+fileName+" successfully with queryParam = "+queryString;
     	
     	
     }
