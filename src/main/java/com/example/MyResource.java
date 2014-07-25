@@ -41,7 +41,11 @@ public class MyResource {
     }
     
     @POST
-    public String postIt(@PathParam("fileName") String fileName){
+    public String postIt(@PathParam("fileName") String fileName, @Context UriInfo ui){
+    	
+    	MultivaluedMap<String, String> queryParams = ui.getQueryParameters();
+        MultivaluedMap<String, String> pathParams = ui.getPathParameters();
+        
         
     	return "Hello, Heroku receieved file - "+fileName+" successfully";
     	
