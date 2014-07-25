@@ -9,6 +9,8 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
 import com.sun.jersey.core.header.FormDataContentDisposition;
 import com.sun.jersey.multipart.FormDataParam;
 
@@ -35,7 +37,7 @@ public class MyResource {
     
     @POST
     @Consumes(MediaType.MULTIPART_FORM_DATA)
-    public String postIt(@FormDataParam("file") InputStream uploadedInputStream,
+    public Response postIt(@FormDataParam("file") InputStream uploadedInputStream,
     		@FormDataParam("file") FormDataContentDisposition fileDetail) {
     	
     	String name = "";
@@ -47,13 +49,11 @@ public class MyResource {
 		// save it
 		//writeToFile(uploadedInputStream, uploadedFileLocation);
  
-		String output = "File uploaded to : " + uploadedFileLocation;
-		
-		return output;
- 
 		//return Response.status(200).entity(output).build();
     	
-    	//return "Hello, Heroku receieved file - "+name+" successfully,and fileName param is "+fileName;
+    	return Response.status(200).entity(uploadedFileLocation).build();
+    	
+    	//return "Hello, Heroku receieved file - "+fileDetail.getFileName()+" successfully!";
     	
     	
     }
