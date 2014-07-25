@@ -35,27 +35,27 @@ public class MyResource {
         return "Hello, Heroku!";
     }
     
-    @POST
-    @Consumes(MediaType.MULTIPART_FORM_DATA)
-    public Response postIt(@FormDataParam("file") InputStream uploadedInputStream,
-    		@FormDataParam("file") FormDataContentDisposition fileDetail) {
-    	
-    	String name = "";
-  
-    	String uploadedFileLocation = "d://uploaded/" + fileDetail.getFileName();
- 
-		
-		
-		// save it
-		//writeToFile(uploadedInputStream, uploadedFileLocation);
- 
-		//return Response.status(200).entity(output).build();
-    	
-    	return Response.status(200).entity(uploadedFileLocation).build();
-    	
-    	//return "Hello, Heroku receieved file - "+fileDetail.getFileName()+" successfully!";
-    	
-    	
-    }
+//    @POST
+//    @Consumes(MediaType.MULTIPART_FORM_DATA)
+//    public Response postIt(@FormDataParam("file") InputStream uploadedInputStream,
+//    		@FormDataParam("file") FormDataContentDisposition fileDetail) {
+//    	
+//    	String name = "";
+//  
+//    	String uploadedFileLocation = "d://uploaded/" + fileDetail.getFileName();
+// 
+//		
+//		
+//		// save it
+//		//writeToFile(uploadedInputStream, uploadedFileLocation);
+// 
+//		//return Response.status(200).entity(output).build();
+//    	
+//    	return Response.status(200).entity(uploadedFileLocation).build();
+//    	
+//    	//return "Hello, Heroku receieved file - "+fileDetail.getFileName()+" successfully!";
+//    	
+//    	
+//    }
     
 }
