@@ -61,6 +61,11 @@
         	<version>6.1.0.CR2</version>
         	<type>pom</type>
         </dependency>
+        <dependency>
+        	<groupId>com.sun.jersey.contribs</groupId>
+        	<artifactId>jersey-multipart</artifactId>
+        	<version>1.18.1</version>
+        </dependency>
     </dependencies>
 
     <build>
