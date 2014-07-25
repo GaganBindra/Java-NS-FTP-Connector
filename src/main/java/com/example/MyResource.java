@@ -15,8 +15,6 @@ import com.sun.jersey.core.header.FormDataContentDisposition;
 import com.sun.jersey.multipart.FormDataParam;
 
 
-
-
 /**
  * Root resource (exposed at "myresource" path)
  */
