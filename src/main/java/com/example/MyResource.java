@@ -40,13 +40,7 @@ public class MyResource {
     public String getIt() {
         return "Hello, Heroku!";
     }
-    
-	@POST
-	public String postForm(){
-	   
-    	
-    	return "X";
-    }
+   
     
 //    @POST
 //    @Consumes(MediaType.MULTIPART_FORM_DATA)
