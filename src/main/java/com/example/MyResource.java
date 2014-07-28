@@ -1,7 +1,11 @@
 package com.example;
 
-
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 
@@ -13,6 +17,8 @@ import javax.ws.rs.core.Response;
 
 import com.sun.jersey.core.header.FormDataContentDisposition;
 import com.sun.jersey.multipart.FormDataParam;
+
+
 
 
 /**
@@ -33,10 +39,11 @@ public class MyResource {
         return "Hello, Heroku!";
     }
     
+    
     @POST
     @Consumes(MediaType.MULTIPART_FORM_DATA)
-    @Produces(MediaType.TEXT_PLAIN)
-    public String postIt(@FormDataParam("file") InputStream uploadedInputStream,
+    public Response postIt(
+    		@FormDataParam("file") InputStream uploadedInputStream,
     		@FormDataParam("file") FormDataContentDisposition fileDetail) {
     	
     	String name = "";
@@ -50,9 +57,9 @@ public class MyResource {
  
 		//return Response.status(200).entity(output).build();
     	
-    	//return Response.status(200).entity(uploadedFileLocation).build();
+    	return Response.status(200).entity(uploadedFileLocation).build();
     	
-    	return "Hello, Heroku receieved file - "+fileDetail.getFileName()+" successfully!";
+    	//return "Hello, Heroku receieved file - "+fileDetail.getFileName()+" successfully!";
     	
     	
     }
