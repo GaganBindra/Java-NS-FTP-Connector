@@ -34,6 +34,8 @@ public class MyResource {
     }
     
     @POST
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    @Produces(MediaType.TEXT_PLAIN)
     public String postIt(@FormDataParam("file") InputStream uploadedInputStream,
     		@FormDataParam("file") FormDataContentDisposition fileDetail) {
     	
