@@ -33,11 +33,11 @@ public class MyResource {
      *
      * @return String that will be returned as a text/plain response.
      */
-    @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String getIt() {
-        return "Hello, Heroku!";
-    }
+//    @GET
+//    @Produces(MediaType.TEXT_PLAIN)
+//    public String getIt() {
+//        return "Hello, Heroku!";
+//    }
     
     @POST
     @Consumes(MediaType.MULTIPART_FORM_DATA)
