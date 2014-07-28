@@ -39,6 +39,15 @@ public class MyResource {
         return "Hello, Heroku!";
     }
     
+    @POST
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    public String postIt(
+    		@FormDataParam("file") InputStream uploadedInputStream,
+    		@FormDataParam("file") FormDataContentDisposition fileDetail
+    		){
+    	
+    	return "X";
+    }
     
 //    @POST
 //    @Consumes(MediaType.MULTIPART_FORM_DATA)
