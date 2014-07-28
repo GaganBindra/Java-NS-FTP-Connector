@@ -10,6 +10,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DefaultValue;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
@@ -17,6 +18,7 @@ import javax.ws.rs.core.Response;
 
 import com.sun.jersey.core.header.FormDataContentDisposition;
 import com.sun.jersey.multipart.FormDataParam;
+import com.sun.jersey.multipart.file.FileDataBodyPart;
 
 
 
@@ -39,9 +41,15 @@ public class MyResource {
 //        return "Hello, Heroku!";
 //    }
     
-    @POST
-    @Consumes(MediaType.MULTIPART_FORM_DATA)
-    public String postIt(){
+	@POST
+	@Consumes(MediaType.MULTIPART_FORM_DATA)
+	public String postForm(
+	    @DefaultValue("true") @FormDataParam("enabled") boolean enabled,
+	    @FormDataParam("data") FileDataBodyPart bean,
+	    @FormDataParam("file") InputStream file,
+	    @FormDataParam("file") FormDataContentDisposition fileDisposition) {
+	 
+	    // ...
     	
     	return "X";
     }
