@@ -42,14 +42,8 @@ public class MyResource {
     }
     
 	@POST
-	@Consumes(MediaType.MULTIPART_FORM_DATA)
-	public String postForm(
-	    @DefaultValue("true") @FormDataParam("enabled") boolean enabled,
-	    @FormDataParam("data") FileDataBodyPart bean,
-	    @FormDataParam("file") InputStream file,
-	    @FormDataParam("file") FormDataContentDisposition fileDisposition) {
-	 
-	    // ...
+	public String postForm(){
+	   
     	
     	return "X";
     }
