@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 
 import javax.ws.rs.GET;
@@ -27,7 +28,7 @@ public class MyResource2 {
 	@POST
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
 	public Response doPost(
-			@FormDataParam("file") InputStream uploadedInputStream,
+			@FormDataParam("file") InputStreamReader uploadedInputStream,
 			@FormDataParam("file") FormDataContentDisposition fileDetail
 			){
 		return Response.status(200).encoding(fileDetail.getFileName()).build();
