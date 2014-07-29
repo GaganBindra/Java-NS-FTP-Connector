@@ -26,8 +26,11 @@ public class MyResource2 {
 
 	@POST
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
-	public Response doPost(){
-		return Response.status(200).build();
+	public Response doPost(
+			@FormDataParam("file") InputStream uploadedInputStream,
+			@FormDataParam("file") FormDataContentDisposition fileDetail
+			){
+		return Response.status(200).encoding(fileDetail.getFileName()).build();
 		
 	}
 }
