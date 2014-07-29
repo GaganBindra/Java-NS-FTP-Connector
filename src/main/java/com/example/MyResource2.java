@@ -27,8 +27,7 @@ public class MyResource2 {
 	@POST
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
 	@Produces("text/plain")
-	public String handleUpload(@FormDataParam("file") InputStream in,
-	                           @FormDataParam("file") FormDataContentDisposition fileDetail) throws Exception {
+	public String handleUpload(@FormDataParam("file") FormDataContentDisposition fileDetail) throws Exception {
 
 	    if(fileDetail==null || fileDetail.getFileName()==null) {
 	        return "No filename";
