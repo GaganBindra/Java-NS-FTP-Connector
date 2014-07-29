@@ -21,10 +21,10 @@ import com.sun.jersey.multipart.FormDataParam;
 import com.sun.jersey.multipart.file.FileDataBodyPart;
 
 
+@Path("/fileupload")
 public class MyResource2 {
 	
 	@POST
-	@Path("/fileupload")
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
 	@Produces("text/plain")
 	public String handleUpload(@FormDataParam("file") InputStream in,
