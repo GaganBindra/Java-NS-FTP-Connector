@@ -37,11 +37,10 @@ public class MyResource {
      */
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    public String getIt(@FormDataParam("file") InputStream uploadedInputStream,
-   		@FormDataParam("file") FormDataContentDisposition fileDetail) {
-        return "Hello, Heroku!"+fileDetail.getFileName();
+    public String getIt() {
+        return "Hello, Heroku!";
     }
-   
+    
     
 //    @POST
 //    @Consumes(MediaType.MULTIPART_FORM_DATA)
