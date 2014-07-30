@@ -49,7 +49,6 @@ public class MyResource {
 				str=str+c; 
 			}
 			
-	
 			 in.close();
 			
 			 
