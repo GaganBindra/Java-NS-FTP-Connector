@@ -41,7 +41,7 @@ public class MyResource {
     public String getIt(InputStream in) {
         int i;
         char c;
-        String str="";
+        String str= new String();
         
     	try {
 			while((i=in.read())!=-1){
@@ -50,6 +50,7 @@ public class MyResource {
 			}
 			
 			 in.close();
+			 str=null;
 			 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
