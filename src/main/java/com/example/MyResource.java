@@ -49,7 +49,7 @@ public class MyResource {
 				str=str+c; 
 			}
 			
-			 in.reset();
+	
 			 in.close();
 			
 			 
