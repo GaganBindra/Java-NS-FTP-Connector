@@ -40,7 +40,7 @@ public class MyResource {
     public String getIt(@FormDataParam("file") InputStream in) {
         int i;
         char c;
-        String str= new String();
+        StringBuffer str= new StringBuffer();
         String message = new String();
        
         
@@ -50,11 +50,9 @@ public class MyResource {
     			in.mark(0);
     		}
     		
-    		str="";
-    		
 			while((i=in.read())!=-1){
 				c=(char)i;
-				str=str+c; 
+				str.append(c); 
 			}
 			
 			if(in.markSupported()){
@@ -63,7 +61,7 @@ public class MyResource {
 			in.close();
 			
 			 
-			 message = "Hello, Heroku! data is "+str;
+			 message = "Hello, Heroku! data is "+str.toString();
 			 str=null;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
