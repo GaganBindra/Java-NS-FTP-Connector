@@ -37,8 +37,10 @@ public class MyResource {
      */
     @POST
     @Produces(MediaType.TEXT_PLAIN)
-    public String getIt() {
-        return "Hello, Heroku!";
+    public String getIt(InputStream in) {
+        
+    	
+    	return "Hello, Heroku!";
     }
     
     
