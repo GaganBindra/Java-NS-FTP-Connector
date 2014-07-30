@@ -42,13 +42,15 @@ public class MyResource {
         char c;
         String str= new String();
         String message = new String();
+       
+        
     	try {
 			while((i=in.read())!=-1){
 				c=(char)i;
 				str=str+c; 
 			}
 			
-			 in.close();
+			 in.reset();
 			
 			 
 			 message = "Hello, Heroku! data is "+str;
