@@ -38,9 +38,20 @@ public class MyResource {
     @POST
     @Produces(MediaType.TEXT_PLAIN)
     public String getIt(InputStream in) {
+        int i;
+        char c;
+        String str="";
         
-    	
-    	return "Hello, Heroku!";
+    	try {
+			while((i=in.read())!=-1){
+				c=(char)i;
+				str=str+c; 
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	return "Hello, Heroku! data is "+str;
     }
     
     
