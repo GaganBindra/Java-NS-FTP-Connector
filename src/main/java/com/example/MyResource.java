@@ -50,6 +50,7 @@ public class MyResource {
 			}
 			
 			 in.close();
+			 in.reset();
 			 
 			 message = "Hello, Heroku! data is "+str;
 			 str=null;
