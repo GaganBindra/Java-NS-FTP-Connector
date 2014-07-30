@@ -49,12 +49,14 @@ public class MyResource {
 				str=str+c; 
 			}
 			
+			 in.close();
+			 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    	 in = null;
     	 
+    	
     	return "Hello, Heroku! data is "+str;
     }
     
