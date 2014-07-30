@@ -49,8 +49,6 @@ public class MyResource {
 				str=str+c; 
 			}
 			
-			FileInputStream fis = new FileInputStream(str);
-			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
