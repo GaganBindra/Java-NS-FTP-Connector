@@ -1,6 +1,8 @@
 package com.example;
 
 import java.io.File;
+import java.io.FileDescriptor;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -41,17 +43,24 @@ public class MyResource {
         int i;
         char c;
         String str="";
+        FileDescriptor fd = null;
         
     	try {
 			while((i=in.read())!=-1){
 				c=(char)i;
 				str=str+c; 
 			}
+			
+			FileInputStream fis = new FileInputStream(str);
+			
+			fd = fis.getFD();
+			 
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    	return "Hello, Heroku! data is "+str;
+    	return "Hello, Heroku! where fd is "+fd.toString()+" & data is "+str;
     }
     
     
