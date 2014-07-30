@@ -37,8 +37,7 @@ public class MyResource {
      * @return String that will be returned as a text/plain response.
      */
     @POST
-    @Produces(MediaType.TEXT_PLAIN)
-    public String getIt(InputStream in) {
+    public String getIt(@FormDataParam("file") InputStream in) {
         int i;
         char c;
         String str= new String();
