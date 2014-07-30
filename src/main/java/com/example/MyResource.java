@@ -50,6 +50,8 @@ public class MyResource {
     			in.mark(0);
     		}
     		
+    		str="";
+    		
 			while((i=in.read())!=-1){
 				c=(char)i;
 				str=str+c; 
