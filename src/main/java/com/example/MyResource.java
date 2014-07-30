@@ -49,8 +49,9 @@ public class MyResource {
 				str=str+c; 
 			}
 			
-			 in.close();
 			 in.reset();
+			 in.close();
+			
 			 
 			 message = "Hello, Heroku! data is "+str;
 			 str=null;
