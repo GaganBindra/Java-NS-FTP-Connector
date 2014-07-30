@@ -45,12 +45,20 @@ public class MyResource {
        
         
     	try {
+    		
+    		if(in.markSupported()){
+    			in.mark(0);
+    		}
+    		
 			while((i=in.read())!=-1){
 				c=(char)i;
 				str=str+c; 
 			}
 			
-			 in.reset();
+			if(in.markSupported()){
+				in.reset();
+			}
+			in.close();
 			
 			 
 			 message = "Hello, Heroku! data is "+str;
