@@ -42,7 +42,7 @@ public class MyResource {
         int i;
         char c;
         String str= new String();
-        
+        String message = null;
     	try {
 			while((i=in.read())!=-1){
 				c=(char)i;
@@ -50,15 +50,16 @@ public class MyResource {
 			}
 			
 			 in.close();
-			 str=null;
 			 
+			 message = "Hello, Heroku! data is "+str;
+			 str=null;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     	 
     	
-    	return "Hello, Heroku! data is "+str;
+    	return message;
     }
     
     
