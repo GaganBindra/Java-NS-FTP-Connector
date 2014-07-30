@@ -42,7 +42,7 @@ public class MyResource {
         int i;
         char c;
         String str= new String();
-        String message = null;
+        String message = new String();
     	try {
 			while((i=in.read())!=-1){
 				c=(char)i;
